@@ -18,6 +18,7 @@ function getRandomInt() {
 		xhr.open('POST', 'https://data.mongodb-api.com/app/application-0-kuunh/endpoint/articles');
 		xhr.setRequestHeader('apiKey', 'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU');
 		xhr.setRequestHeader('api-key', 'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU');
+		xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkNhbGViIiwiaWF0IjoxNjE3MzEzNDIwLCJleHAiOjE2ODg4NDk0MjAsImF1ZCI6ImJvaWJvaS1jdWw4ciJ9.o3f8x5_0pnZGaZGwUrb6TuDoDhIzy8ZiiDDYngEYZAY');
 		xhr.send();
 		alert(xhr.response);
 		
