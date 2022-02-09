@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="main.css">
+	<title>Запросы</title>
+</head>
+<body>
+	 <form action="" class="air" name="formdata">
+	<div class="form-inner">
+	<div class="stripes-block"></div>
+	<div class="form-row">
+	<label for="name">Название</label>
+	<input type="text" id="name" required>
+	</div>
+	<div class="form-row">
+	<label for="address">Текст</label>
+	<textarea rows="3" id="address" required></textarea>
+	</div>
+	
+	<div class="form-row-icon">
+	<i class="fa fa-paper-plane-o"></i>
+	<input type="submit" value="отправить" name="senddata">
+	</div>
+	</div>
+</form>
+<script type="text/javascript">
+	function getRandomInt() {
+  		return Math.floor(Math.random() * 1000000);
+	}
+	document.forms['formdata'].onsubmit = function(){
+
+		let title = document.getElementById('name').value;
+		let text = document.getElementById('address').value;
+		let id = getRandomInt()
+		let data = {
+			'id' : id,
+			'title' : title,
+			'text' : text
+		}
+		console.log(data);
+
+
+		let xhr = new XMLHttpRequest();
+		xhr.open('POST', 'https://data.mongodb-api.com/app/application-0-kuunh/endpoint/articles');
+		xhr.setRequestHeader('Content-Type', 'application/json');
+		xhr.setRequestHeader('Access-Control-Allow-Origin', 'file:///D:/html/index.html');
+		xhr.setRequestHeader('apiKey', 'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU');
+		xhr.send();
+		alert(xhr.response);
+		
+  
+		return false;
+	}
+</script>
+</body>
+</html>
