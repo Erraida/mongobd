@@ -29,43 +29,7 @@
 	</div>
 	</div>
 </form>
-<script type="module">
-	function getRandomInt() {
-  		return Math.floor(Math.random() * 1000000);
-	}
-	document.forms['formdata'].onsubmit = function(){
-
-		let title = document.getElementById('name').value;
-		let text = document.getElementById('address').value;
-		let id = getRandomInt()
-		var data_set = {
-			'id' : id,
-			'title' : title,
-			'text' : text
-		}
-		console.log(data_set);
-
-
-		$.ajax({
-			url: 'https://realm.mongodb.com/api/client/v2.0/app/application-0-kuunh/graphql',         /* Куда пойдет запрос */
-			method: 'post',            
-			headers: {
-		        'Content-Type':'application/json',
-		        'api-key':'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU',
-		        'apiKey':'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU',
-		    },
-			data: data_set,     
-			success: function(data){  
-				alert(data); 
-
-			},
-			error: function(data){
-            console.log(error)
-        }
-		});
-  
-		return false;
-	}
+<script type="module" src='index.js'>
 
 
 </script>
