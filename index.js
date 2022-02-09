@@ -15,6 +15,7 @@ function getRandomInt() {
 
 
 		let xhr = new XMLHttpRequest();
+		xnr.withCredentials = true;
 		xhr.open('POST', 'https://data.mongodb-api.com/app/application-0-kuunh/endpoint/articles', true);
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencode');
 		xhr.setRequestHeader('api-key', 'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU');
