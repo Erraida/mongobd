@@ -4,34 +4,31 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="main.css">
-	<script
-	  src="https://code.jquery.com/jquery-3.6.0.js"
-	  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
 	<title>Запросы</title>
 </head>
 <body>
-	 <form method="POST" class="air" name="formdata">
-	<div class="form-inner">
-	<div class="stripes-block"></div>
-	<div class="form-row">
-	<label for="name">Название</label>
-	<input type="text" id="name" required>
-	</div>
-	<div class="form-row">
-	<label for="address">Текст</label>
-	<textarea rows="3" id="address" required></textarea>
-	</div>
-	
-	<div class="form-row-icon">
-	<i class="fa fa-paper-plane-o"></i>
-	<input type="submit" value="отправить" name="senddata">
-	</div>
-	</div>
-</form>
-<script type="module" src='index.js'>
+	 <button onclick="sendRequest()">send</button>
+<script>
+
+	function sendRequest(){
 
 
+
+
+		var xnr = new XMLHttpRequest();
+		xnr.withCredentials = true;
+		xnr.open('GET', 'https://data.mongodb-api.com/app/application-0-kuunh/endpoint/articles', true);
+		xnr.setRequestHeader('Content-Type', 'application/x-www-form-urlencode');
+		xnr.setRequestHeader('Access-Control-Allow-Origin', '*');
+		xnr.setRequestHeader('api-key', 'kS8LnhKZj5Je7jzBXZHzLAwwR4tfulfLmjSnsOR2DNakYQ0seCaK9PnAmGQfEDuU');
+		
+		xnr.send();
+		console.log(xnr.response);
+		
+  
+
+	}
 </script>
 </body>
 </html>
